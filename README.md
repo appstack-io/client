@@ -1,1 +1,1 @@
-# client
+# @appstack-io/client
