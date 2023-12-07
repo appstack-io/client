@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { createChannel, createClient, RawClient } from 'nice-grpc';
-import * as clientLib from './index';
+import * as clientLib from './client';
 import { DynamicInvocationInternal } from './types';
 
 @Injectable()
