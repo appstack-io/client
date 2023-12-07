@@ -1,12 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { createChannel, createClient, RawClient } from 'nice-grpc';
+import { createChannel, createClient } from 'nice-grpc';
 import * as clientLib from './client';
 import { DynamicInvocationInternal } from './types';
 
 @Injectable()
 export class ClientService {
-  private clients: Map<string, RawClient<any, any>> = new Map();
-
   private serviceChannel = createChannel(
     `${process.env.PROTO_HOST}:${process.env.PROTO_PORT}`,
   );
