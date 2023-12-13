@@ -6,15 +6,15 @@ import { DynamicInvocationInternal } from './types';
 @Injectable()
 export class ClientService {
   private serviceChannel = createChannel(
-    `${process.env.PROTO_HOST}:${process.env.PROTO_PORT}`,
+    `${process.env.PROTO_HOST}:${process.env.ASIO_MS_PUBLIC_PORT}`,
   );
 
   private serviceInternalChannel = createChannel(
-    `${process.env.PROTO_INTERNAL_HOST}:${process.env.PROTO_INTERNAL_PORT}`,
+    `${process.env.PROTO_INTERNAL_HOST}:${process.env.ASIO_MS_PRIVATE_PORT}`,
   );
 
   private workersChannel = createChannel(
-    `${process.env.WORKERS_HOST}:${process.env.WORKERS_PORT}`,
+    `${process.env.WORKERS_HOST}:${process.env.ASIO_WORKERS_PORT}`,
   );
 
   getServiceClient<C>(T: any): C {
